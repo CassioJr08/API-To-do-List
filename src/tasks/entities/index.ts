@@ -1,8 +1,8 @@
 import { Column, CreateDateColumn, Entity, PrimaryColumn } from "typeorm"
 import { v4 as uuidv4 } from 'uuid'  
 
-@Entity()
-export class task{
+@Entity({ name: 'TasksTable' })
+export class TasksTable{
 
     @PrimaryColumn()
     id?: string
@@ -14,7 +14,7 @@ export class task{
     description: string
 
     @CreateDateColumn()
-    created_at: Date
+    created_at?: Date
 
 
     constructor() {
