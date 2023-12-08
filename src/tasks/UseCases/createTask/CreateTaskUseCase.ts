@@ -8,14 +8,14 @@ export class CreateTasksUseCase{
     
     constructor(private taskRepository: TasksRepository){}
 
-    async execute({ title, description, completed }: CreateTaskDTO): Promise<TasksTable> {
-        const taskAreadyExists = await this.taskRepository.findByName(title, description, completed)
+    async execute({ title, description }: CreateTaskDTO): Promise<TasksTable> {
+        const taskAreadyExists = await this.taskRepository.findByName(title, description)
 
         if(taskAreadyExists){
            throw new AppError('Role already exists', 400)
         }
 
-        return this.taskRepository.create({ title, description, completed })
+        return this.taskRepository.create({ title, description })
     }
 
 }

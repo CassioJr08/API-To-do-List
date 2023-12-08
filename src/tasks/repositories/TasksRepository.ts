@@ -15,8 +15,8 @@ export class TasksRepository {
         return this.repository.save(task)
     }
 
-    async findByName(title: string, description: string, completed = false): Promise<TasksTable | null> {
-        return this.repository.findOneBy({ title,  description, completed})
+    async findByName(title: string, description: string): Promise<TasksTable | null> {
+        return this.repository.findOneBy({ title,  description })
         
       }
 }
