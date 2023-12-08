@@ -10,13 +10,13 @@ export class TasksRepository {
         this.repository = dataSource.getRepository(TasksTable)
     }
 
-    async create({title, description}: CreateTaskDTO): Promise<TasksTable> {
-        const task = this.repository.create({title, description})
+    async create({title, description, completed = false}: CreateTaskDTO): Promise<TasksTable> {
+        const task = this.repository.create({title, description, completed})
         return this.repository.save(task)
     }
 
-    async findByName(title: string, description: string): Promise<TasksTable | null> {
-        return this.repository.findOneBy({ title,  description})
+    async findByName(title: string, description: string, completed = false): Promise<TasksTable | null> {
+        return this.repository.findOneBy({ title,  description, completed})
         
       }
 }

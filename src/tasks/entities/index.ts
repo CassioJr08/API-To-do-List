@@ -15,6 +15,9 @@ export class TasksTable{
 
     @CreateDateColumn()
     created_at?: Date
+    
+    @Column()
+    completed?: boolean
 
 
     constructor() {
