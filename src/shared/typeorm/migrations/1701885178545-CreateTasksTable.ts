@@ -8,7 +8,7 @@ export class CreateTasksTable1701885178545 implements MigrationInterface {
             columns: [
                 {
                     name: 'id',
-                    type: 'uuid',
+                    type: 'uuid', 
                     isPrimary: true
                 },
                 {

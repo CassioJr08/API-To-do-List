@@ -16,7 +16,7 @@ export class TasksTable{
     @CreateDateColumn()
     created_at?: Date
     
-    @Column()
+    @Column({ default: false })
     completed?: boolean
 
 
